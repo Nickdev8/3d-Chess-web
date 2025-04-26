@@ -53,6 +53,7 @@ script = ExtResource("3_o6xl0")
 board_root = NodePath("../../BoardRoot")
 camera = NodePath("../../CameraPivot/Camera3D")
 rule_engine = NodePath("../RuleEngine")
+game_manager_path = NodePath("..")
 
 [node name="RuleEngine" type="Node" parent="GameManager"]
 script = ExtResource("4_tipki")

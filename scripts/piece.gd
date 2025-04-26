@@ -14,6 +14,7 @@ func _ready() -> void:
 	var inst = packed.instantiate() as Node3D
 	add_child(inst)
 	mesh_inst = _find_mesh_instance(inst)
+	set_meta("coord", coord)
 	set_meta("piece_type", piece_type)
 
 	# 2) Tint meshes (white or gray)

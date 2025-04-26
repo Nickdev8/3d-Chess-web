@@ -10,3 +10,4 @@ func _ready() -> void:
 	var mat = orig_mat.duplicate()
 	mat.albedo_color = Color.WHITE if (coord.x + coord.y) % 2 == 0 else Color.GRAY
 	mesh_inst.material_override = mat
+	set_meta("coord", coord)
