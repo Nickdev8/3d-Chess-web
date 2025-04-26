@@ -1,23 +1,97 @@
-[gd_scene load_steps=3 format=3 uid="uid://del61g4dadcq7"]
+[gd_scene load_steps=12 format=3 uid="uid://del61g4dadcq7"]
 
-[ext_resource type="Script" uid="uid://cn20d0moid771" path="res://GameManager.gd" id="1_w0kyx"]
+[ext_resource type="Script" uid="uid://cn20d0moid771" path="res://scripts/GameManager.gd" id="1_w0kyx"]
 [ext_resource type="Script" uid="uid://bopot1u73g5er" path="res://scripts/CameraMovement.gd" id="3_mlkix"]
+[ext_resource type="Script" uid="uid://0q4pkxwq53c7" path="res://scripts/InputController.gd" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://d4j40da5nfcdb" path="res://scenes/tile.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bcvs1gkx6n14a" path="res://assets/queen.gltf" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://dry1pu6w5tx3o" path="res://scripts/RuleEngine.gd" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://ioawu1xpj5x7" path="res://assets/rook.gltf" id="5_tipki"]
+[ext_resource type="PackedScene" uid="uid://7avb2jsrikgg" path="res://assets/pawn.gltf" id="6_85g3d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
+sky_top_color = Color(0.395325, 0.901602, 0.970449, 1)
+sky_horizon_color = Color(0.384314, 0.882353, 0.490196, 1)
+sun_angle_max = 52.22
+sun_curve = 0.261165
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 2
+sky = SubResource("Sky_sugp2")
+ambient_light_source = 3
 
 [node name="Node3D" type="Node3D"]
 
-[node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_w0kyx")
-size = 1
-
-[node name="Board" type="Node" parent="."]
-unique_name_in_owner = true
-
-[node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.650058, 0.759884, 0, -0.759884, 0.650058, 3.5, 0, 4.5)
-script = ExtResource("3_mlkix")
-
-[node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jyhfs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.936507, 0, -0.350649, 0.289939, 0.562401, 0.774365, 0.197205, -0.826865, 0.526692, 0, 0, 0)
+transform = Transform3D(0.911411, -0.219409, -0.348123, 0.354453, 0.848333, 0.393311, 0.209029, -0.481861, 0.85095, 0, 0, 0)
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0.374606, -0.927183, 0, 0.927183, 0.374606, 1, 1.63746e-08, -4.05285e-08, 5.2, 1.2, 5.3)
+script = ExtResource("3_mlkix")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="RayCast" type="RayCast3D" parent="CameraPivot/Camera3D"]
+collide_with_areas = true
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("board_root")]
+unique_name_in_owner = true
+script = ExtResource("1_w0kyx")
+board_root = NodePath("../BoardRoot")
+size = 1.5
+
+[node name="InputController" type="Node" parent="GameManager" node_paths=PackedStringArray("board_root", "camera", "rule_engine")]
+script = ExtResource("3_o6xl0")
+board_root = NodePath("../../BoardRoot")
+camera = NodePath("../../CameraPivot/Camera3D")
+rule_engine = NodePath("../RuleEngine")
+
+[node name="RuleEngine" type="Node" parent="GameManager"]
+script = ExtResource("4_tipki")
+
+[node name="BoardRoot" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Node3D" type="Node3D" parent="."]
+visible = false
+
+[node name="StaticBody3D" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101838, 0, 0.0334463)
+
+[node name="StaticBody3D2" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15019, 0, 0.0334463)
+
+[node name="StaticBody3D3" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17835, 0, 0.0334463)
+
+[node name="StaticBody3D4" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0458353, 0, 1.10409)
+
+[node name="StaticBody3D5" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12163, 0, 1.0884)
+
+[node name="StaticBody3D6" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16298, 0, 1.09899)
+
+[node name="StaticBody3D8" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10955, 0, 2.16611)
+
+[node name="StaticBody3D7" parent="Node3D" instance=ExtResource("3_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.079469, 0, 2.16845)
+
+[node name="rook" parent="Node3D" instance=ExtResource("5_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10657, 0, -0.157804)
+
+[node name="pawn" parent="Node3D" instance=ExtResource("6_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15316, 0, 1.07485)
+
+[node name="queen" parent="Node3D" instance=ExtResource("4_o6xl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11751, 0, 0.000424385)

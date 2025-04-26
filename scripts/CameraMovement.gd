@@ -7,6 +7,7 @@ extends Node3D
 @export var zoom_speed: float    = 1.0   # units per wheel tick
 @export var min_distance: float  = 2.0
 @export var max_distance: float  = 20.0
+@export var Start_distance: float  = 10.0
 
 @export var pan_speed: float     = 0.005  # tweak to taste
 
@@ -15,7 +16,9 @@ var pitch: float = 0.0
 @onready var camera: Camera3D = $Camera3D
 
 func _ready() -> void:
-	# clamp initial zoom
+	pitch = rotation.x
+	yaw = rotation.y
+	camera.position.z = Start_distance
 	camera.position.z = clamp(camera.position.z, min_distance, max_distance)
 
 func _unhandled_input(event: InputEvent) -> void:
