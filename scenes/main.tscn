@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://del61g4dadcq7"]
+
+[ext_resource type="Script" uid="uid://cn20d0moid771" path="res://GameManager.gd" id="1_w0kyx"]
+[ext_resource type="Script" uid="uid://bopot1u73g5er" path="res://scripts/CameraMovement.gd" id="3_mlkix"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("1_w0kyx")
+size = 1
+
+[node name="Board" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.650058, 0.759884, 0, -0.759884, 0.650058, 3.5, 0, 4.5)
+script = ExtResource("3_mlkix")
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.936507, 0, -0.350649, 0.289939, 0.562401, 0.774365, 0.197205, -0.826865, 0.526692, 0, 0, 0)

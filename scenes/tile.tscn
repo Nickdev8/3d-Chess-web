@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4j40da5nfcdb"]
+
+[ext_resource type="Script" uid="uid://bfncofffkisb7" path="res://scripts/tile.gd" id="1_nujvs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cq761"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qb6bw"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_nujvs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_cq761")
+surface_material_override/0 = SubResource("StandardMaterial3D_qb6bw")
