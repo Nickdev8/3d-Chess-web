@@ -11,7 +11,11 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.395325, 0.901602, 0.970449, 1)
-sky_horizon_color = Color(0.384314, 0.882353, 0.490196, 1)
+sky_horizon_color = Color(0.394545, 0.897701, 0.50093, 1)
+sky_curve = 0.0174944
+ground_bottom_color = Color(0.133333, 0.858824, 0, 1)
+ground_horizon_color = Color(0.647059, 0.917647, 0.670588, 1)
+ground_energy_multiplier = 0.2
 sun_angle_max = 52.22
 sun_curve = 0.261165
 
@@ -35,6 +39,7 @@ transform = Transform3D(0.911411, -0.219409, -0.348123, 0.354453, 0.848333, 0.39
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0.374606, -0.927183, 0, 0.927183, 0.374606, 1, 1.63746e-08, -4.05285e-08, 5.2, 1.2, 5.3)
 script = ExtResource("3_mlkix")
+pan_speed = 0.02
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -62,7 +67,6 @@ script = ExtResource("4_tipki")
 unique_name_in_owner = true
 
 [node name="Node3D" type="Node3D" parent="."]
-visible = false
 
 [node name="StaticBody3D" parent="Node3D" instance=ExtResource("3_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101838, 0, 0.0334463)
