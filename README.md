@@ -32,3 +32,4 @@ Click on any piece and move it.
    git clone https://github.com/Nickdev8/3d-Chess-web.git
    cd 3d-Chess-web
    godot .
+
