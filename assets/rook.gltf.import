@@ -8,7 +8,6 @@ path="res://.godot/imported/rook.gltf-11ef126697ffde560e6162414995999f.scn"
 
 [deps]
 
-
 source_file="res://assets/rook.gltf"
 dest_files=["res://.godot/imported/rook.gltf-11ef126697ffde560e6162414995999f.scn"]
 

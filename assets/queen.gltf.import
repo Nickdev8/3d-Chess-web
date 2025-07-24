@@ -6,7 +6,6 @@ type="PackedScene"
 uid="uid://bcvs1gkx6n14a"
 path="res://.godot/imported/queen.gltf-284511153548bc20ee569d0cedebbeea.scn"
 
-
 [deps]
 
 source_file="res://assets/queen.gltf"

@@ -6,7 +6,6 @@ type="PackedScene"
 uid="uid://dv35lpfoyo4gk"
 path="res://.godot/imported/king.gltf-dc574d48f135c20cd6a1b75023b7258a.scn"
 
-
 [deps]
 
 source_file="res://assets/king.gltf"

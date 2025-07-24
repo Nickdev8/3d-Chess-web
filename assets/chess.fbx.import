@@ -8,7 +8,6 @@ path="res://.godot/imported/chess.fbx-3c2368d903a41aad5ac8bd3ffe8b081c.scn"
 
 [deps]
 
-
 source_file="res://assets/chess.fbx"
 dest_files=["res://.godot/imported/chess.fbx-3c2368d903a41aad5ac8bd3ffe8b081c.scn"]
 
