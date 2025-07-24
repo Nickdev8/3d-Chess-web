@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ioawu1xpj5x7" path="res://assets/rook.gltf" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://7avb2jsrikgg" path="res://assets/pawn.gltf" id="6_85g3d"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.395325, 0.901602, 0.970449, 1)
 sky_horizon_color = Color(0.394545, 0.897701, 0.50093, 1)
