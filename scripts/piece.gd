@@ -7,6 +7,7 @@ extends Area3D
 @export var mesh_inst: MeshInstance3D
 @export var collison_inst: CollisionShape3D
 
+
 func _ready() -> void:
 	# 1) Load & instance the glTF scene
 	var scene_path = "res://assets/%s.gltf" % piece_type

@@ -13,3 +13,4 @@ script = ExtResource("1_nujvs")
 transform = Transform3D(1, 0, 0, 0, 0.130229, 0, 0, 0, 1, 0, 0.515815, 0)
 mesh = SubResource("BoxMesh_cq761")
 surface_material_override/0 = SubResource("StandardMaterial3D_qb6bw")
+

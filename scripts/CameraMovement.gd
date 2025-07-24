@@ -9,6 +9,7 @@ extends Node3D
 @export var max_distance: float  = 20.0
 @export var Start_distance: float  = 10.0
 
+
 @export var pan_speed: float     = 0.005  # tweak to taste
 
 var yaw: float   = 0.0

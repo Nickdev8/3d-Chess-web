@@ -6,6 +6,7 @@ type="PackedScene"
 uid="uid://dvb8y1di81v3p"
 path="res://.godot/imported/bishop.gltf-a3dbd426122b10a73d0cefb958648c56.scn"
 
+
 [deps]
 
 source_file="res://assets/bishop.gltf"

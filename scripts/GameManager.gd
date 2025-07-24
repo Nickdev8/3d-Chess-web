@@ -9,6 +9,7 @@ const PIECE_SCENE = preload("res://scenes/piece.tscn")
 var board_map: Dictionary = {}
 var last_move := { "piece": null, "from": null, "to": null }
 
+
 var starting_positions = [
 	{"type":"rook",   "color":"black", "coord":Vector2i(0,7), "rotation":-90},
 	{"type":"knight", "color":"black", "coord":Vector2i(1,7), "rotation":-90},

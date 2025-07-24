@@ -10,6 +10,7 @@ var selected_piece: Area3D = null
 var legal_moves   : Array  = []
 var highlighted_tiles: Array[MeshInstance3D] = []
 
+
 func _unhandled_input(ev: InputEvent) -> void:
 	if not (ev is InputEventMouseButton and ev.button_index == MOUSE_BUTTON_LEFT and ev.pressed):
 		return

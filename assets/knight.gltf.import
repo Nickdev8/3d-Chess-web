@@ -6,6 +6,7 @@ type="PackedScene"
 uid="uid://bx2mg3ln1mlrh"
 path="res://.godot/imported/knight.gltf-65cb26edfd8a2a2a48372e6d6e4fae39.scn"
 
+
 [deps]
 
 source_file="res://assets/knight.gltf"

@@ -27,6 +27,7 @@ static func get_legal_moves(piece: Node, from: Vector2i, board_map: Dictionary, 
 			return []
 
 
+
 static func _in_bounds(pos: Vector2i) -> bool:
 	return pos.x >= 0 and pos.x < 8 and pos.y >= 0 and pos.y < 8
 

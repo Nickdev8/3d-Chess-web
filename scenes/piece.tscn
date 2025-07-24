@@ -4,3 +4,4 @@
 
 [node name="Area3D" type="Area3D"]
 script = ExtResource("1_gebih")
+
